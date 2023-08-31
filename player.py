@@ -25,7 +25,8 @@ class Player(Turtle):
         """Returns true if player has reached the other side of the road, false otherwise"""
         return self.ycor() > 280
 
-    def to_start_position(self):
+    def to_start_position(self) -> None:
+        """Reset player to initial position on screen"""
         self.setpos(START_POSITION)
 
 

@@ -1,3 +1,4 @@
+import turtle
 from turtle import Turtle
 import random
 
@@ -5,6 +6,8 @@ TOP = 280
 BOTTOM = -280
 SPREAD = 20
 LANES = [i for i in range(BOTTOM, TOP, SPREAD)]
+
+turtle.colormode(255)
 
 
 def get_random_color():
@@ -23,7 +26,7 @@ class Car(Turtle):
         super().__init__("square")
         self.penup()
         self.color(get_random_color())
-        self.shapesize(3, 1)
+        self.shapesize(1, 3)
         self.setpos(280, choose_random_lane())
 
     def move(self):
