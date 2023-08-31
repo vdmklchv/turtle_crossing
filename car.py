@@ -2,8 +2,8 @@ import turtle
 from turtle import Turtle
 import random
 
-TOP = 280
-BOTTOM = -280
+TOP = 240
+BOTTOM = -240
 SPREAD = 20
 LANES = [i for i in range(BOTTOM, TOP, SPREAD)]
 
