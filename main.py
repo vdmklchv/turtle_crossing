@@ -14,15 +14,16 @@ turtle.tracer(0)
 player = Player()
 sb = Scoreboard(player.level)
 
-GAME_ON = True
 
 turtle.listen()
 turtle.onkeypress(player.go_up, "w")
 
+
 cars = []
 
 
-def move_cars():
+def move_cars() -> None:
+    "Moves all existing cars and removes cars that go out of screen"
     for car in cars:
         car.move()
         if car.xcor() <= -280:
@@ -30,12 +31,17 @@ def move_cars():
             car.hideturtle()
 
 
+GAME_ON = True
+
 while GAME_ON:
-    time.sleep(0.1)
+    time.sleep(0.3/player.level)  # increase speed through each level
     turtle.update()
+
+    # choose how often to create a new car
     random_int = random.randint(0, 100)
     if random_int <= 20:
         cars.append(Car())
+
     move_cars()
 
     for car in cars:
@@ -47,7 +53,5 @@ while GAME_ON:
         player.update_level()
         player.to_start_position()
         sb.update_score(player.level)
-
-    print(len(cars))
 
 turtle.mainloop()

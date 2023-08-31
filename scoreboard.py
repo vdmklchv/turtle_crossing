@@ -11,9 +11,11 @@ class Scoreboard(Turtle):
         self.write(f"Level: {level}", font=("Verdana", 24, "normal"))
 
     def update_score(self, level: int) -> None:
+        """Writes player level"""
         self.clear()
         self.write(f"Level: {level}", font=("Verdana", 24, "normal"))
 
-    def game_over(self):
+    def game_over(self) -> None:
+        """Writes Game Over line in center of the screen"""
         self.goto(-100, 0)
         self.write(f"GAME OVER!", font=("Verdana", 24, "normal"))
