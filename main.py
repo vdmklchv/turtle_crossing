@@ -38,6 +38,11 @@ while GAME_ON:
         cars.append(Car())
     move_cars()
 
+    for car in cars:
+        if player.distance(car) < 15:
+            GAME_ON = False
+            sb.game_over()
+
     if player.has_reached_end():
         player.update_level()
         player.to_start_position()
