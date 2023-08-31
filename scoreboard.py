@@ -9,3 +9,7 @@ class Scoreboard(Turtle):
         self.penup()
         self.goto(-280, 250)
         self.write(f"Level: {level}", font=("Verdana", 24, "normal"))
+
+    def update_score(self, level: int) -> None:
+        self.clear()
+        self.write(f"Level: {level}", font=("Verdana", 24, "normal"))
